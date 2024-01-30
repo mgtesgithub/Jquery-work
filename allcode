@@ -1,0 +1,108 @@
+ $("li:eq(0)").css("border","6px solid red").html;
+            // $("li:gt(3)").css("border","6px solid yellow").html;
+            $("li:lt(3)").css("border","6px solid blue").html;
+
+
+  //mouse events Events
+  $(document).ready(function(){
+    $("#pragra").click(function(){
+      $("#pragra").css("background-color","green");
+
+     var a = $("#pragra").html();
+     console.log(a);
+   });
+
+   $("#pragra").dblclick(function(){
+     $("ul, li,p").css("background-color","rgb(192, 255, 243)")
+   });
+
+   $("#pragra").contextmenu(function(){
+     $("ul, li,p").css("background-color"," rgb(8, 151, 239)")
+   })
+   $("#pragra").mouseenter(function(){
+     $("ul, li,p").css("background-color","rgb(15, 219, 39)")
+   })
+   $("#pragra").mouseleave(function(){
+     $("ul, li,p").css("background-color","rgb(132, 159, 13)")
+   });
+ });           
+
+
+
+   //Keyboard Events
+   $(document).ready(function(){
+    $("body").keypress(function(){
+     $(this).css("background-color","yellow");
+    });
+    $("body").keyup(function(){
+     $(this).css("background-color","orange");
+    });
+    $("body").keydown(function(){
+     $(this).css("background-color","green");
+    });
+ });
+
+//==================================================================================================================================
+//Form Events
+
+<body>
+    <h1>This is the Form</h1>
+    <form action="" id="sform">
+      <label for="">Name</label>
+      <input type="email" name="" id="sname" />
+      <br /><br />
+
+      <label for="">Class</label>
+      <input type="text" id="sclass" />
+      <br /><br />
+      <label for="">Country</label>
+      <select name="" id="scountry">
+        <option value="india">india</option>
+        <option value="fjs">fjs</option>
+        <option value="dsdg">dsdg</option>
+      </select>
+      <br /><br />
+
+      <input type="submit" />
+      <br /><br />
+
+      <div
+        id="test"
+        style="height: 30px; width: 50px; border: 2px solid red; background-color: yellow; color: white';"
+      ></div>
+    </form>
+
+    <script>
+      //Form Events
+      $(document).ready(function () {
+        $("#sname,#sclass,#scountry").focus(function () {
+          $(this).css("background-color", "yellow");
+        });
+
+        $("#sname,#sclass,#scountry").blur(function () {
+          $(this).css("background-color", " ");
+        });
+
+        $("#scountry").change(function(){
+          var a = $(this).val();
+          $("#test").html(a);
+        });
+      
+      
+        $("#sname","#sclass").select(function(){
+          $(this).css("background-color","red");
+        });
+
+        $("#sform").submit(function(){
+          alert("form submited");
+        });
+      });
+    </script>
+  </body>
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-3.7.1.min.js"></script>
+    <style></style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>This is the Form</h1>
+    <form action="" id="sform">
+      <label for="">Name</label>
+      <input type="email" name="" id="sname" />
+      <br /><br />
+
+      <label for="">Class</label>
+      <input type="text" id="sclass" />
+      <br /><br />
+      <label for="">Country</label>
+      <select name="" id="scountry">
+        <option value="india">india</option>
+        <option value="fjs">fjs</option>
+        <option value="dsdg">dsdg</option>
+      </select>
+      <br /><br />
+
+      <input type="submit" />
+      <br /><br />
+
+      <div
+        id="test"
+        style="height: 30px; width: 50px; border: 2px solid red; background-color: yellow; color: white';"
+      ></div>
+    </form>
+
+    <script>
+      //Form Events
+      $(document).ready(function () {
+        $("#sname,#sclass,#scountry").focus(function () {
+          $(this).css("background-color", "yellow");
+        });
+
+        $("#sname,#sclass,#scountry").blur(function () {
+          $(this).css("background-color", " ");
+        });
+
+        $("#scountry").change(function(){
+          var a = $(this).val();
+          $("#test").html(a);
+        });
+      
+      
+        $("#sname","#sclass").select(function(){
+          $(this).css("background-color","red");
+        });
+
+        $("#sform").submit(function(){
+          alert("form submited");
+        });
+      });
+    </script>
+  </body>
+</html>

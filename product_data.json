@@ -1,0 +1,14 @@
+{
+    "product_data": [
+        {
+            "product_name": "Green Beg",
+            "price": 750,
+            "image": "1.png"
+        },
+        {
+            "product_name": "Red Beg",
+            "price": 250,
+            "image": "1.png"
+        }
+    ]
+}
