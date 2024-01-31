@@ -43,7 +43,7 @@
  });
 
 //==================================================================================================================================
-//Form Events
+//Form
 
 <body>
     <h1>This is the Form</h1>
@@ -106,3 +106,462 @@
 
 
 
+
+
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <script src="./jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+   
+</head>
+<body>
+
+    <!-- <h1>This is the Get Method</h1>
+    <div id="box" class="test abc">
+      <h2>test box</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, architecto.</p>
+    </div> -->
+
+    <h1>This is the Form</h1>
+    <form action="" id="sform">
+      <label for="">Name</label>
+      <input type="email" name="" id="sname" />
+      <br /><br />
+
+      <label for="">Class</label>
+      <input type="text" id="sclass" />
+      <br /><br />
+      <label for="">Country</label>
+      <select name="" id="scountry">
+        <option value="india">india</option>
+        <option value="fjs">fjs</option>
+        <option value="dsdg">dsdg</option>
+      </select>
+      <br /><br />
+
+      <input type="submit" />
+      <br /><br />
+
+       
+    </form>
+    
+    <div id="test"
+    style="
+    border: 5px solid red;
+     height: 200px;
+ width: 300px;
+ background-color: transparent;
+ color: white;">
+ </div>
+
+
+
+
+  <script>
+    $(document).ready(function(){
+     // var a = $("body").html();  //it gives the all html code
+    //  console.log(a); 
+
+
+    //  var v = $("body").text(); //is gives the all code without html tags
+    //  console.log(v); 
+    
+    
+     // var a = $("#box").attr('class'); //is gives the all code without html tags
+      //console.log(a); 
+
+
+      //val method  for this we can create the form
+
+      $("#sform").submit(function(){
+          var name= $("#sname").val()
+          var classname = $("#sclass").val()
+          var country = $("#scountry").val()
+          
+          var formValues = "Name: " + name + "<br>Class: " + classname + "<br>Country: " + country;
+          $("#test").html(formValues);
+          
+          console.log(name,classname,country);
+          alert(" name is" +"  "+ name+" " +"classname id"+" "+classname+" " +"country id"+ " "+country);
+      });
+
+       
+    });
+
+  </script>
+</body>
+</html> 
+
+
+
+
+
+
+<!-- ===SET METHOD -------------------------------------------------------------------------------------------------------------------->
+<!-- 
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="./jquery-3.7.1.min.js"></script>
+  <style>
+    * {
+      background-color: rgb(248, 170, 3);
+    }
+
+    .red {
+      color: red;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>This is the Form</h1>
+
+    <div id="box" class="test">
+      <h2>Test box</h2>
+
+      <p id="p1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+        sequi!
+      </p>
+      <p id="p2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+        necessitatibus.
+      </p>
+      <button id="clickbutton">Set value</button>  
+
+
+      <form action="" id="sform">
+
+        <label for="">Name</label>
+        <input type="text" name="" id="sname" />
+        <br /><br />
+    
+        <label for="">Class</label>
+        <input type="text" id="sclass" />
+        <br><br>
+        <input type="submit" />
+      </form>
+    
+    
+      <div id="test"></div>
+    
+    
+      </div>
+    
+      <br />
+      <script>
+        $(document).ready(function () {
+          
+          // $("#clickbutton").click(function () {
+          //   $("#p1").text(" hello MG");
+          // });
+    
+          // $("#clickbutton").click(function () {
+          //   $("#p2").html("<i><b>p2</i></b>");
+          // });
+    
+          // $("#clickbutton").click(function () {
+          //   $("#p2").attr("class","red");
+          // });
+    
+    
+          $("#sname").click(function () {
+    
+            $(this).val("hello! MG");
+          });
+          $("#sclass").click(function () {
+    
+            $(this).val("div3");
+          });
+    
+          $("#sform").submit(function (event) {
+            event.preventDefault();
+            var a = $("#sname ").val()
+            var r= $("#sclass ").val()
+            var printvalue = "sname:-" +a+ "<br>"+"sclass"+r
+            $("#test").html(printvalue);
+          })
+    
+    
+        });
+      </script>
+    </body>
+    
+    </html>
+ -->
+
+
+<!-- ========================================================Class SETUP  -->
+
+
+<!-- 
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <style>
+      * {
+        /* background-color: rgb(255, 174, 0); */
+      }
+
+      .first{
+        background-color: rgb(15, 224, 15);
+      }
+      .second{
+        background-color: rgb(44, 10, 237);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery Class Methods</h1>
+    <div id="box" style="border: 2px solid black;">
+      <h3>Test box</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, perferendis!</p>
+    </div>
+
+    <div class="container" style="margin-top: 15px;">
+    <button id="addclass">Addcls</button>
+    <button id="removeclass">RemoveCls</button>
+    <button id="toggleclass">ToggleCls</button>
+  </div>
+    <script>
+      $(document).ready(function(){
+          $("#addclass").click(function(){
+            $("#box ,h1").addClass("first second")
+          });
+          $("#removeclass").click(function(){
+            $("#box ,h1").removeClass("second")
+          });
+          $("#toggleclass").click(function(){
+            $("#box ,h1").toggleClass("second")
+          });
+      });
+    </script>
+  </body>
+</html>
+
+ -->
+
+
+ <!-- ========================================On_OFF Events ==============================-->
+ <!-- 
+
+
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <style>
+      * {
+        /* background-color: rgb(255, 174, 0); */
+      }
+
+      
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery Class Methods</h1>
+    <div id="box" style="border: 2px solid black;">
+      <h2>Test box</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, perferendis!</p>
+    </div>
+
+    <button>remove </button>
+    
+  
+    <script>
+      $(document).ready(function(){
+             $("#box").on({
+              "click":function(){
+                $(this).css("background","orange  ");
+
+              },
+                "mouseout:": function(){
+                  $(this).css("background","yellow")
+                },
+
+                "contextmenu":function(){
+                  $(this).css("background","pink");
+                }
+             }) ;     
+             
+             $("button").click(function(){
+              $("#box").off("click mouseout")
+             })
+
+      });
+    </script>
+  </body>
+</html>
+
+  -->
+
+
+
+  <!-- 
+    CloneMethod
+
+
+
+
+    <script>
+    $(document).ready(function(){
+      $("#cloneBtn1").click(function(){
+        $("#box h1").clone().prependTo("#box2");
+       
+      });
+      $("#cloneBtn2").click(function(){
+        $("#box p").clone().appendTo("#box2");
+       
+      });
+
+
+    });
+  </script>
+   -->
+
+
+   <!-- 
+    hasClass
+
+
+
+       $(document).ready(function(){
+      $("#cloneBtn1").click(function(){
+        console.log($("#box").hasClass("mrt")) 
+        //it return only true or false
+      });
+      
+
+
+    });
+    -->
+
+    <!-- 
+      Hide&Show&Toggle
+
+
+
+       <script>
+    $(document).ready(function(){
+       $("#hide").click(function(){
+        $("#box").hide('10000s',function(){
+            
+          console.log("gayab ho gaya ")
+        }); //fast ,slow
+       });
+       
+       $("#show").click(function(){
+        $("#box").show('slow',function(){
+          console.log("dikh raha hey")
+
+        });
+       });
+ 
+       $("#toggle").click(function(){
+        $("#box").toggle('slow',function(){
+          console.log("ye to toggle ho gaya ")
+        });
+       });
+ 
+
+
+    });
+  </script>
+     -->
+
+
+     <!-- 
+      Fade in Fade OUt
+
+
+          
+  <script>
+    $(document).ready(function(){
+       $("#hide").click(function(){
+        $("#box").fadeIn('fast',function(){
+            
+          console.log("gayab ho gaya ")
+        }); //fast ,slow
+       });
+       
+       $("#show").click(function(){
+        $("#box").fadeOut('fast',function(){
+          console.log("dikh raha hey")
+
+        });
+       });
+ 
+       $("#toggle").click(function(){
+        $("#box").fadeToggle('fast',function(){
+          console.log("ye to toggle ho gaya ")
+        });
+       });
+ 
+
+
+    });
+  </script>
+      -->
+
+
+
+      <!-- 
+        Slide Up AND Slide Down
+<body>
+  <div id="box"  class="container"  style="background-color: green;">
+    <h1>Test box</h1>
+     </div>
+    <br>
+    
+    <button id="hide">slideUp</button>
+    <button id="show">slideDown</button>
+    <button id="toggle">slideToggle</button>
+    
+      
+  <script>
+    $(document).ready(function(){
+       $("#hide").click(function(){
+        $("#box").slideUp('fast',function(){
+            
+          console.log("gayab ho gaya ")
+        }); //fast ,slow
+       });
+       
+       $("#show").click(function(){
+        $("#box").slideDown('fast',function(){
+          console.log("dikh raha hey")
+
+        });
+       });
+ 
+       $("#toggle").click(function(){
+        $("#box").slideToggle('fast',function(){
+          console.log("ye to toggle ho gaya ")
+        });
+       });
+ 
+
+
+    });
+  </script>
+</body>
+       -->
